@@ -8,8 +8,8 @@ file_out=u'/Users/dmelgar/PGD_gmpe/all_events_pgd.pkl'
 load_from_file=True
 
 if load_from_file==False:
+
     p=pgd(path_to_files)
-    
     
     # Get hypocentral distance too DOESN'T EXIST YET
     p.get_hypocentral_distance()
@@ -22,6 +22,15 @@ if load_from_file==False:
     
     #get PGD
     p.get_PGD()
+    
+    #get PGD with time
+    p.get_PGD_with_time()
+    
+    #get PGD with time
+    p.get_station_magnitudes()
+    
+    #get PGD with time
+    p.get_event_magnitudes(thresh=0.025,method='mean',weighted=True)
     
     #plot
     p.plot_PGD(SNR_thresh=3.0)
